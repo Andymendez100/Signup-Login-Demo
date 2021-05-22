@@ -1,4 +1,5 @@
 const { signin, signup, dashboard } = require('../../controllers/handlebarRenders');
+const isLoggedIn = require('../../middlewares/isLoggedIn');
 
 module.exports = (app) => {
 
@@ -6,6 +7,6 @@ module.exports = (app) => {
 
     app.get('/signin', signin);
 
-    app.get('/dashboard', dashboard );
+    app.get('/dashboard', isLoggedIn, dashboard);
 
 }

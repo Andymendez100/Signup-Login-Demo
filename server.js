@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+require('./routes/routes')(app);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {

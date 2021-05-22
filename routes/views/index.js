@@ -6,6 +6,6 @@ module.exports = (app) => {
 
     app.get('signin', signin);
 
-    app.get('dashboard', dashboard);
+    app.get('dashboard', dashboard );
 
 }

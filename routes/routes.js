@@ -15,6 +15,8 @@ module.exports = (app) => {
     app.set('view engine', 'handlebars');
 
     require('./views/index')(app);
+    require('./api/index')(app, passport);
+
 
     app.get('/', (req, res) => {
         res.send('server is up')

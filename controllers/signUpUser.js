@@ -14,7 +14,6 @@ const signUpUser = (req, email, password, done) => {
         }
         else {
             const userPassword = generateHash(password);
-            console.log(userPassword);
 
             const data = {
                 email,

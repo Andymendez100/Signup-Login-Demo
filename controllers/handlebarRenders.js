@@ -1,5 +1,5 @@
 const signup = (req, res) => {
-res.render('signup')
+    res.render('signup')
 };
 
 const signin = (req, res) => {
@@ -10,8 +10,16 @@ const dashboard = (req, res) => {
     res.render('dashboard')
 };
 
+const logout = (req, res) => {
+    req.session.destroy(err => {
+        if (err) console.error(err);
+        res.redirect('/');
+    });
+};
+
 module.exports = {
     signup,
     signin,
-    dashboard
+    dashboard,
+    logout
 }

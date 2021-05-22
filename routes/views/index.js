@@ -2,10 +2,10 @@ const { signin, signup, dashboard } = require('../../controllers/handlebarRender
 
 module.exports = (app) => {
 
-    app.get('signup', signup);
+    app.get('/signup', signup);
 
-    app.get('signin', signin);
+    app.get('/signin', signin);
 
-    app.get('dashboard', dashboard );
+    app.get('/dashboard', dashboard );
 
 }

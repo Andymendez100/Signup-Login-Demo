@@ -1,6 +1,7 @@
 const session = require('express-session');
 const passport = require('passport');
 const exphbs = require('express-handlebars');
+const User = require('../models/User');
 
 module.exports = (app) => {
 
@@ -13,6 +14,8 @@ module.exports = (app) => {
     // Set Handlebars as the default template engine
     app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
     app.set('view engine', 'handlebars');
+
+    require('../config/passport/passport')(passport, User);
 
     require('./views/index')(app);
     require('./api/index')(app, passport);
